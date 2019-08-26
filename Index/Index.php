@@ -1,5 +1,5 @@
-
 <?php
+###.Github created already
     function reDirHomePage(){
         
         if(isset($_COOKIE['LoggedIn'])){
