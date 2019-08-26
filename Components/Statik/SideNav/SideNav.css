@@ -1,0 +1,58 @@
+#sidenav-menu-btn {
+  width: 40px;
+  /* height: 30px; */
+  position: absolute;
+  top: 20px;
+  left: 7px;
+
+  /* display: inline-block; */
+}
+
+#sidenav-menu-icon {
+  font-size: 300%;
+
+  width: 60px;
+  margin-left: 3px;
+
+  color: black;
+}
+
+#sidenav-menu-btn ul {
+  font-size: 110%;
+  font-family: stencil;
+
+  padding: 0;
+
+  position: absolute;
+  top: 20px;
+  left: 4px;
+
+  color: black;
+}
+
+#userName {
+  font-size: 260%;
+  font-weight: bold;
+  font-family: Impact;
+
+  width: 100%;
+
+  color: black;
+  background-color: green;
+}
+
+#firstName {
+  font-size: 120%;
+  width: 35%;
+
+  color: red;
+  background-color: green;
+}
+
+#lastName {
+  font-size: 120%;
+  width: 50%;
+
+  color: red;
+  background-color: green;
+}

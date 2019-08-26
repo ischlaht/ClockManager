@@ -1,0 +1,147 @@
+$mysqli = new mysqli('127.0.0.1', 'root', '', '');
+
+if ($mysqli->connect_error) {
+    die('Connect Error (' . $mysqli->connect_errno . ') '
+            . $mysqli->connect_error);
+}
+echo '<p>Connection OK '. $mysqli->host_info.'</p>';
+echo '<p>Server '.$mysqli->server_info.'</p>';
+$mysqli->close();
+
+
+if (extension_loaded('sockets')) {
+	//Create socket IPv4
+	$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP) ;
+	if($socket === false) {
+		$errorcode = socket_last_error() ;
+		$errormsg = socket_strerror($errorcode);
+		echo "<p>Error socket IPv4: ".$errormsg."</p>\n" ;
+	}
+	else {
+		echo "<p>Socket IPv4 supported</p>\n" ;
+		socket_close($socket);
+	}
+
+	//Create socket IPv6
+	$socket = socket_create(AF_INET6, SOCK_STREAM, SOL_TCP) ;
+	if($socket === false) {
+		$errorcode = socket_last_error() ;
+		$errormsg = socket_strerror($errorcode);
+		echo "<p>Error socket IPv6: ".$errormsg."</p>\n" ;
+	}
+	else {
+		echo "<p>Socket IPv6 supported</p>\n" ;
+		socket_close($socket);
+	}
+}
+else echo "<p>Extension PHP sockets not loaded</p>\n" ;
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+King permissions will include ---
+	*permission to ban admins
+	*permission to control admins permissions
+	*permission to ........
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+------------------------------------Set Boxshadow using jquery--------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+
+$(document).ready( function () { 
+	$('.BoxShadow').css({
+		"box-shadow": "0px 5px 20px -1px rgba(65, 65, 65, 1)",
+		"-webkit-box-shadow": "0px 5px 20px -1px rgba(65, 65, 65, 1)",
+		"-moz-box-shadow": "0px 5px 20px -1px rgba(65, 65, 65, 1)"
+	});
+});
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------Function to get cookies with VANILLA JAVASCRIPT----------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+
+ $scope.GetCookies = function (cookiename){
+ 	var name = cookiename + "=";
+ 	var decodedCookie = decodeURIComponent(document.cookie);
+ 	var ca = decodedCookie.split(';');
+ 		for(var i = 0; i <ca.length; i++) {
+ 			var c = ca[i];
+ 				while (c.charAt(0) == ' ') {
+ 					c = c.substring(1);
+ 				}
+ 				if (c.indexOf(name) == 0) {
+ 					return c.substring(name.length, c.length);
+ 				}
+ 		}			
+ 	return "";
+ };
+
+ // 	$scope.BindCookieData = function(){
+
+// 		if($cookies.get('LoggedIn') === true){
+// 			$scope.UserName = $cookies.get('UserName')
+// 			$scope.FirstName = $cookies.get('FirstName')
+// 			$scope.LastName = $cookies.get('LastName')
+// 			alert($cookies.get('UserName'))
+// 		}
+// 		else{
+// 			alert($cookies.get('UserName'))
+// 		}
+// 	}//End of BindCookieData...
+
+// $scope.BindCookieData()
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+// $scope.LoginFunction = function () {
+//     var FD = new FormData()
+
+//     var UserName = $('#userName').val()
+//     var Password = $('#password').val()
+
+//     // ERROR Handling
+//     var ErrorCode = false
+//     var LoggedIn = false
+
+//     FD.append('UserName', UserName)
+//     FD.append('Password', Password)
+
+//     $http({
+//     method: 'POST',
+//     url: './LoginController.php?FuncLoginUser="true"',
+//     data: FD,
+//     headers: {
+//         'Content-Type': undefined
+//     }
+//     }) // End of http Function
+
+//     .then(function (response, data) {
+
+//     }); // End of .then fcuntion...
+// }; // End of Login Function...
